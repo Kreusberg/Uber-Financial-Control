@@ -32,10 +32,10 @@ class Notification : NotificationListenerService() {
                 .replace(",", ".").toDoubleOrNull()
 
             val data = hashMapOf(
-                "DataInclusao" to Date(),
-                "Titulo" to title,
-                "Descricao" to text,
-                "Valor" to valor
+                "IncludedDate" to Date(),
+                "Title" to title,
+                "Description" to text,
+                "Value" to valor
             )
 
             if (valor != null) {
