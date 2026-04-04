@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.fin.uberfinancialcontrol" />
+                  <option name="mobileSdkAppId" value="1:882895957274:android:68dc0de4aaf27dfacd10a3" />
+                  <option name="projectId" value="uberfinancialcontrol" />
+                  <option name="projectNumber" value="882895957274" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

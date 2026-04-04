@@ -1,7 +1,11 @@
 package com.fin.uberfinancialcontrol
 
+import android.Manifest
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.ComponentActivity
@@ -20,12 +24,27 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationManagerCompat
 import com.fin.uberfinancialcontrol.ui.theme.UberFinancialControlTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel("1", "Main Channel", NotificationManager.IMPORTANCE_DEFAULT)
+            getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                1
+            )
+        }
+
         enableEdgeToEdge()
         setContent {
             UberFinancialControlTheme {
@@ -50,17 +69,17 @@ fun NotificationPermissionScreen(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         if (isEnabled) {
-            Text(text = "O serviço de notificações está ATIVO!")
-            Text(text = "Aguardando notificações...")
+            Text(text = "The Notification Service is ON!")
+            Text(text = "Waiting notifications...")
         } else {
-            Text(text = "O serviço de notificações está DESATIVADO")
+            Text(text = " The Notification Service is OFF!")
             Button(
                 onClick = {
                     context.startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS))
                 },
                 modifier = Modifier.padding(top = 16.dp)
             ) {
-                Text("Habilitar Acesso às Notificações")
+                Text("Enable access to notifications")
             }
         }
     }

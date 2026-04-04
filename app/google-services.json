@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "882895957274",
+    "project_id": "uberfinancialcontrol",
+    "storage_bucket": "uberfinancialcontrol.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882895957274:android:68dc0de4aaf27dfacd10a3",
+        "android_client_info": {
+          "package_name": "com.fin.uberfinancialcontrol"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChP5zjYlYxlwDnH_ey2S9WFSwf9MXuaEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
