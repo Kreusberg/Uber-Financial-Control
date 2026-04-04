@@ -14,7 +14,7 @@ import android.Manifest
 class Notification : NotificationListenerService() {
 
     companion object {
-        const val DB_COLLECTION = "Notifications"
+        const val DB_COLLECTION = "Uber_Rides"
         const val TAG = "NotificationListener"
     }
 
